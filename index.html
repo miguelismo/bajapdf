@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Title</title>
+</head>
+<body>
+
+    <h1>Baja PDF</h1>
+    <div class="boton">Boton</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+$( document ).ready(function() {
+
+  var $idown;  // Keep it outside of the function, so it's initialized once.
+  downloadURL : function(url) {
+    if ($idown) {
+      $idown.attr('src',url);
+    } else {
+      $idown = $('<iframe>', { id:'idown', src:url }).hide().appendTo('body');
+    }
+  };
+    
+    $( ".boton" ).click(function() {
+      downloadURL('https://www.seguroscencosud.cl/vseg-paris/Ganadores/2019/marzo/Ganadores_Concurso_Bencina_SOAP_2019.pdf');
+    });
+    
+});
+</script>
+</body>
+</html>
