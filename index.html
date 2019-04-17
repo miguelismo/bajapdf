@@ -6,15 +6,20 @@
 </head>
 <body>
     
-    <a class="boton">Baja el PDF!</a>
+    <div class="boton">Baja el PDF!</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
 $( document ).ready(function() {
     
+    function exportmasterfile()
+    {   var url='https://www.seguroscencosud.cl/vseg-paris/Ganadores/2019/marzo/Ganadores_Concurso_Bencina_SOAP_2019.pdf';    
+        window.open(url,'Download');  
+    }
+    
     $(".boton").click(function(e) {
-    e.preventDefault(); // stop the browser from following
-    window.location.href = 'https://www.seguroscencosud.cl/vseg-paris/Ganadores/2019/marzo/Ganadores_Concurso_Bencina_SOAP_2019.pdf';
+        //e.preventDefault();
+        exportmasterfile();
     });
     
 });
